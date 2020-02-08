@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	state = {
+		data: []
+	};
+
+	handleClickLeft = () => {
+		const data = this.state.data;
+		data.push({ img: "left", time: Date() });
+		this.setState({ data }, console.log(this.state.data));
+	};
+
+	handleClickRight = () => {
+		const data = this.state.data;
+		data.push({ img: "right", time: Date() });
+		this.setState({ data }, console.log(this.state.data));
+	};
+
+	render() {
+		return (
+			<div className="App">
+				<div className="left" onClick={this.handleClickLeft}>
+					<img
+						className="fit"
+						src="https://dairycheq.com/images/uploads/qmilk_product.jpg"
+					></img>
+					<h3>Some data here</h3>
+				</div>
+				<div className="right" onClick={this.handleClickRight}>
+					<img
+						className="fit"
+						src="https://dairycheq.com/images/uploads/qmilk_product.jpg"
+					></img>
+					<h3>Some data here</h3>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;
