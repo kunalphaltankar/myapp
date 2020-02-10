@@ -1,7 +1,6 @@
 .App {
-	width: 640px;
+	width: 90%;
 	height: 480px;
-	border: solid;
 
 	position: absolute;
 	top: 0;
@@ -14,18 +13,26 @@
 }
 
 .left {
-	border: solid;
 	height: 480px;
-	width: 314px;
+	width: 300px;
 	position: absolute;
 }
 
 .right {
-	border: solid;
 	height: 480px;
-	width: 314px;
+	width: 300px;
 	position: absolute;
 	right: 0;
+}
+
+.middle {
+	height: 100px;
+	width: 300px;
+	position: absolute;
+	left: 43%;
+	margin-left: -50px;
+	margin-top: 12%;
+	text-align: center;
 }
 
 .fit {
